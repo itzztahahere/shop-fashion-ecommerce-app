@@ -864,7 +864,7 @@ app.post('/create-contact', (req, res) => {
 
 const PORT = process.env.PORT || 20934;
 app.listen(PORT, () => {
-    console.log(`Server running on port ${20934}`);
+    console.log(`Server running on port ${PORT}`);
 });
 
 
