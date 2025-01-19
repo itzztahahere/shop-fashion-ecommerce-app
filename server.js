@@ -857,9 +857,14 @@ app.post('/create-contact', (req, res) => {
 
 
 
-const port = 3308;
-app.listen(port, () => {
-    console.log(`Server is running on port ${port}`);
+// const port = 3308;
+// app.listen(port, () => {
+//     console.log(`Server is running on port ${port}`);
+// });
+
+const PORT = process.env.PORT || 20934;
+app.listen(PORT, () => {
+    console.log(`Server running on port ${PORT}`);
 });
 
 
