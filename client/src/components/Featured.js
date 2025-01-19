@@ -12,7 +12,7 @@ const EditorsPick = () => {
   // Fetch the featured products from the API
   const getFeaturedProducts = async () => {
     try {
-      const { data } = await axios.get("http://localhost:3308/get-products"); // Replace with your API endpoint
+      const { data } = await axios.get("${apiUrl}/get-products"); // Replace with your API endpoint
       setProducts(data?.data.slice(0, 4)); // Get only the first 8 products
     } catch (error) {
       console.error(error);
@@ -44,7 +44,7 @@ const EditorsPick = () => {
         <div
           className="product-image"
           style={{
-            backgroundImage: `url(http://localhost:3308/${product.p_image})`,
+            backgroundImage: `url(${apiUrl}/${product.p_image})`,
           }}
         ></div>
         <div className="product-info">

@@ -20,7 +20,7 @@ const NewArrivals = () => {
   const getAllProducts = async () => {
     try {
       const { data } = await axios.get(
-        "http://localhost:3308/new-arrivals"
+        "${apiUrl}/new-arrivals"
       );
       setProducts(data?.data);
     } catch (error) {
@@ -84,7 +84,7 @@ const NewArrivals = () => {
                     <div
                       className="product-image"
                       style={{
-                        backgroundImage: `url(http://localhost:3308/${p.p_image})`,
+                        backgroundImage: `url(${apiUrl}/${p.p_image})`,
                       }}
                     ></div>
                     <div className="product-info">

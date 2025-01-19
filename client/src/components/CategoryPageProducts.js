@@ -72,7 +72,7 @@ const CategoryPageProducts = () => {
                                         <div
                                             className="product-image"
                                             style={{
-                                                backgroundImage: `url(http://localhost:3308/${p.p_image})`,
+                                                backgroundImage: `url(${apiUrl}/${p.p_image})`,
                                             }}
                                         ></div>
                                         <div className="product-info">

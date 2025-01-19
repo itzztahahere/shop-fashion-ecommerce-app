@@ -25,7 +25,7 @@
     "react-scripts": "5.0.1",
     "recharts": "^2.15.0"
   },
-  "proxy": "http://localhost:3308",
+  "proxy": "${apiUrl}",
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",

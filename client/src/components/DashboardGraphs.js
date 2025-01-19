@@ -12,7 +12,7 @@ const DashboardGraphs = () => {
 
 
         // Fetch total product count
-        fetch('http://localhost:3308/get-products-count')
+        fetch('${apiUrl}/get-products-count')
             .then((response) => response.json())
             .then((data) => {
                 if (data.success) {
@@ -24,7 +24,7 @@ const DashboardGraphs = () => {
             .catch((err) => setError(err.message || "An error occurred"));
 
         // Fetch product counts by category
-        fetch('http://localhost:3308/get-products-count-by-category')
+        fetch('${apiUrl}/get-products-count-by-category')
             .then(response => response.json())
             .then(data => {
                 if (data.success) {
@@ -40,7 +40,7 @@ const DashboardGraphs = () => {
             .catch((err) => setError(err.message || "An error occurred"));
 
         // Fetch total subscriber count
-        fetch('http://localhost:3308/get-subscriber-count')
+        fetch('${apiUrl}/get-subscriber-count')
             .then((response) => response.json())
             .then((data) => {
                 if (data.success) {
@@ -53,7 +53,7 @@ const DashboardGraphs = () => {
             .catch((err) => setError(err.message || "An error occurred"));
 
         // Fetch total subscriber count
-        fetch('http://localhost:3308/get-normal-users-count')
+        fetch('${apiUrl}/get-normal-users-count')
             .then((response) => response.json())
             .then((data) => {
                 if (data.success) {

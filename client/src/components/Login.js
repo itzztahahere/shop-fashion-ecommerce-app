@@ -43,7 +43,7 @@ const Login = () => {
 
     // If no errors, simulate form submission (API integration)
     try {
-      const response = await fetch('http://localhost:3308/user-login', {
+      const response = await fetch('${apiUrl}/user-login', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ u_email: email, u_password: password }),

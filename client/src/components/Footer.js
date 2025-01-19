@@ -23,7 +23,7 @@ const Footer = () => {
 
     setIsLoading(true);
     try {
-      const response = await axios.post('http://localhost:3308/add-subscriber', { email });
+      const response = await axios.post('${apiUrl}/add-subscriber', { email });
       if (response.data.success) {
         setMessage('Successfully subscribed!');
         setTimeout(() => {

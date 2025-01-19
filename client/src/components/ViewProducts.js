@@ -121,7 +121,7 @@ const ViewProducts = () => {
                     {currentProducts.map((product) => (
                         <tr key={product.p_id} style={{ verticalAlign: 'middle' }}>
                             <td>
-                                <img src={`http://localhost:3308/${product.p_image}`} width={50} alt={product.p_name} />
+                                <img src={`${apiUrl}/${product.p_image}`} width={50} alt={product.p_name} />
                             </td>
                             <td>{product.p_name}</td>
                             <td>{product.p_description}</td>

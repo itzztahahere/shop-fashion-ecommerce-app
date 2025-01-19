@@ -14,7 +14,7 @@ const Faqs = () => {
   // Fetch FAQ questions
   const getQuestions = async () => {
     try {
-      const { data } = await axios.get('http://localhost:3308/get-faqs');
+      const { data } = await axios.get('${apiUrl}/get-faqs');
       setFaqs(data?.data);
     } catch (error) {
       console.error(error);

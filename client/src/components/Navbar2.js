@@ -105,7 +105,7 @@ const Navbar = () => {
               onClick={() => {
                 if (keyword.trim()) {
                   // Ensure `keyword` is not empty or just spaces
-                  fetch(`http://localhost:3308/search-products/${keyword}`)
+                  fetch(`${apiUrl}/search-products/${keyword}`)
                     .then((res) => res.json())
                     .then((data) => {
                       if (data.success) {

@@ -1,6 +1,7 @@
 import React from 'react'
 import { MdClose } from 'react-icons/md';
 import { useCart } from '../context/Cart';
+import apiUrl from './config';
 const CartPage = () => {
     const { cart, setCart } = useCart();
 
@@ -42,7 +43,7 @@ const CartPage = () => {
                             return (
                                 <tr style={{ verticalAlign: 'middle' }}>
                                     <td>
-                                        <img src={`http://localhost:3308/${p.p_image}`} width={50} alt={p.p_name} />
+                                        <img src={`${apiUrl}/${p.p_image}`} width={50} alt={p.p_name} />
                                     </td>
 
                                     <td>{p.p_name}</td>

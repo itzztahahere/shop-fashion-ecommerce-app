@@ -6,7 +6,7 @@ const useCategory = () => {
 
     const fetchCategories = async () => {
         try {
-            const { data } = await axios.get('http://localhost:3308/get-categories');
+            const { data } = await axios.get('${apiUrl}/get-categories');
             setCategories(data?.categories || []);
         } catch (error) {
             console.error('Error fetching categories:', error);

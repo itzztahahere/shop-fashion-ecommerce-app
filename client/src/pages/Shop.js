@@ -22,7 +22,7 @@ const Shop = () => {
     const getAllProducts = async () => {
         try {
             const { data } = await axios.get(
-                "http://localhost:3308/get-products"
+                "${apiUrl}/get-products"
             );
             setProducts(data?.data);
         } catch (error) {
@@ -168,7 +168,7 @@ const Shop = () => {
                     {/* <div className="product-list">
                         {currentProducts.map((p) => {
                             const productImage = p.p_img
-                                ? `http://localhost:3308/${p.p_image}`
+                                ? `${apiUrl}/${p.p_image}`
                                 : "/images/men.jpg";
 
                             return (
@@ -209,7 +209,7 @@ const Shop = () => {
                     <div className="product-list">
                     {products?.map((p) => (
                         <div  className="product-card">
-                            <div className="product-image" style={{backgroundImage: `url(http://localhost:3308/${p.p_image})`
+                            <div className="product-image" style={{backgroundImage: `url(${apiUrl}/${p.p_image})`
  }}></div>
                             <div className="product-info">
                                 <h4 style={{ color: '#333', fontSize: '20px', padding: '0' }}>{p.p_name}</h4>

@@ -14,7 +14,7 @@ const ContactUs = () => {
 
 
     try {
-      const response = await fetch('http://localhost:3308/create-contact', {
+      const response = await fetch('${apiUrl}/create-contact', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

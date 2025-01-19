@@ -15,7 +15,7 @@ const Search = () => {
   useEffect(() => {
     const fetchSearchResults = async () => {
       try {
-        const response = await fetch(`http://localhost:3308/search-products/${keyword}`);
+        const response = await fetch(`${apiUrl}/search-products/${keyword}`);
         const data = await response.json();
         if (data.success) {
           console.log(products);
@@ -58,7 +58,7 @@ const Search = () => {
                 return (
                   <tr keyword={product.p_id} style={{ verticalAlign: 'middle' }}>
                     <td>
-                      <img src={`http://localhost:3308/${product.p_image}`} width={50} alt={product.p_name} />
+                      <img src={`${apiUrl}/${product.p_image}`} width={50} alt={product.p_name} />
                     </td>
                     <td>{product.p_name}</td>
                     <td style={{ color: '#555' }}>
