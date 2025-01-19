@@ -1,0 +1,120 @@
+/* Editors Section Styles */
+.editors-pick-section {
+    text-align: center;
+    padding: 50px 20px;
+    background-color: #fff;
+    /* Light background color for the section */
+}
+
+.section-header h2 {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #333;
+}
+
+.section-header p {
+    font-size: 1rem;
+    color: #666;
+    margin-top: 10px;
+}
+
+/* Container for the three columns */
+.columns-container {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 40px;
+    padding-left: 15%;
+    padding-right: 15%;
+    gap: 15px;
+    /* Add space between columns */
+}
+
+.column {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    margin: 15px;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    text-align: center;
+    height: 500px;
+    /* Set a fixed height for each column */
+    width: 32%;
+    /* Adjust the width to make them evenly spaced */
+}
+
+/* The CTA button on top of the background image */
+.cta2-button {
+    color: black;
+    background-color: white;
+    width: 150px;
+    padding: 12px 24px;
+    font-size: 1rem;
+    text-transform: uppercase;
+    cursor: pointer;
+    border: none;
+    position: absolute;
+    left: 20px;
+    bottom: 20px;
+    font-weight: bold;
+}
+
+.cta2-button:hover {
+    background-color: #525252;
+}
+
+/* Mobile responsiveness */
+@media (max-width: 768px) {
+    .columns-container {
+        width: 100%;
+        flex-direction: column;
+        /* Stack columns vertically */
+        padding-left: 0;
+        padding-right: 0;
+        display: flex;
+    }
+    .columns-container .column:nth-child(1) {
+        background-image: url('../public/images/menMobile.jpg') !important;
+    }
+    .column {
+        width: 100%;
+        /* Ensure each column takes full width */
+        height: 200px;
+        background-size: cover;
+        background-position: top right;
+        background-repeat: no-repeat;
+        /* Adjust height to ensure they are rectangular */
+        margin: 10px 0;
+    }
+
+    /* Adjust button size for mobile */
+    .cta2-button {
+        font-size: 0.9rem;
+        padding: 10px 20px;
+    }
+}
+
+/* Tablet View (adjustments for button sizes) */
+@media (min-width: 768px) and (max-width: 1023px) {
+    .columns-container {
+        flex-direction: row;
+        /* Keep columns in a row */
+        justify-content: space-between;
+        /* Even space between columns */
+    }
+
+    .column {
+        width: 30%;
+        /* Ensure equal width for columns */
+        height: 400px;
+        /* Adjust the height for a better tablet view */
+    }
+
+    .cta2-button {
+        font-size: 1rem;
+        /* Keep button size appropriate for tablet */
+        padding: 12px 24px;
+    }
+}

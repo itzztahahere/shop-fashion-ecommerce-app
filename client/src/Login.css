@@ -1,0 +1,160 @@
+/* Login container styles */
+.login-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 40px;
+  }
+  
+  /* Form box styling */
+  .login-form {
+    width: 100%;
+    max-width: 500px;
+  }
+  
+  /* Heading styling */
+  .login-heading {
+    text-align: center;
+    font-size: 2rem;
+    font-weight: bold;
+    margin-bottom: 20px;
+  }
+  
+  /* Form field styles */
+  .form-field {
+    margin-bottom: 15px;
+  }
+  
+  .form-field label {
+    display: block;
+    font-size: 1rem;
+    color: #333;
+    margin-bottom: 5px;
+  }
+  
+  .form-field input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 1rem;
+    color: #333;
+  }
+  
+  .form-field input:focus {
+    outline: none;
+    border-color: rgba(var(--bs-success-rgb));
+  }
+  
+  /* Login button styling */
+  .login-button {
+    background-color: rgba(var(--bs-success-rgb));
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    font-size: 1rem;
+    width: 100%;
+    cursor: pointer;
+    text-transform: uppercase;
+  }
+  
+  .login-button:hover {
+    background-color: rgb(0, 84, 0);
+  }
+  
+  /* Forgot Password link styling */
+  .forgot-password {
+    display: block;
+    text-align: center;
+    font-size: 0.875rem;
+    margin-top: 10px;
+    color: rgba(var(--bs-success-rgb));
+    text-decoration: none;
+  }
+  
+  .forgot-password:hover {
+    text-decoration: underline;
+  }
+  
+  /* Create Account Section Styling */
+  .or-section {
+    text-align: center;
+    margin-top: 20px;
+  }
+  
+  .or-section p {
+    font-size: 1rem;
+    color: #333;
+  }
+  
+  .create-account {
+    display: inline-block;
+    font-size: 1rem;
+    color: rgba(var(--bs-success-rgb));
+    text-decoration: none;
+    margin-top: 10px;
+  }
+  
+  .create-account:hover {
+    text-decoration: underline;
+  }
+  
+  /* Mobile responsiveness */
+  @media (max-width: 768px) {
+    .login-form {
+      padding: 20px 30px;
+      width: 100%;
+      max-width: 320px;
+    }
+  
+    .login-heading {
+      font-size: 1.8rem;
+    }
+  
+    .form-field input {
+      font-size: 0.9rem;
+      padding: 8px;
+    }
+  
+    .login-button {
+      padding: 10px 18px;
+      font-size: 0.9rem;
+    }
+  
+    .or-section p {
+      font-size: 0.9rem;
+    }
+  }
+  /* Additional styling for error handling */
+.form-control.is-invalid {
+  border-color: #dc3545; /* Bootstrap red color for invalid inputs */
+}
+
+.invalid-feedback {
+  color: #dc3545; /* Red color for error messages */
+  font-size: 0.875rem;
+}
+
+.password-input-container {
+  position: relative;
+}
+
+.password-toggle-btn {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  color: rgba(var(--bs-success-rgb));
+}
+
+.password-toggle-btn:focus {
+  outline: none;
+}
+
+.password-toggle-btn:hover {
+  color: rgb(0, 84, 0);
+}

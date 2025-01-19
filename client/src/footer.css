@@ -1,0 +1,144 @@
+.footer {
+    background-color: #f8f8f8;
+    font-family: Arial, sans-serif;
+    width: 100%;
+    margin: 0 auto;
+  }
+  
+  .footer-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 80%;
+    margin: 0 auto;
+    padding: 20px 0;
+  }
+  
+  .footer-brand-name {
+    font-size: 24px;
+    letter-spacing: 10px;
+    font-weight: bold;
+    text-decoration: none;
+    color: #333;
+  }
+  
+  .footer-socials a {
+    margin-left: 15px;
+    color: rgba(var(--bs-success-rgb));
+    text-decoration: none;
+  }
+  
+  .footer-socials a:hover {
+    color: rgb(0,84,0);
+  }
+  
+  /* Footer bottom grid layout */
+  .footer-bottom {
+    background-color: #fff;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1.5fr; /* Last column takes more space */
+    gap: 15px; /* Space between columns */
+    padding: 20px 150px;
+  }
+  
+  .footer-column h4 {
+    font-size: 16px;
+    font-weight: bold;
+  }
+  
+  .footer-column ul {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  .footer-column ul li {
+    margin: 5px 0;
+  }
+  
+  .footer-column ul li a {
+    text-decoration: none;
+    color: #555;
+  }
+  
+  .footer-column ul li a:hover {
+    color: rgb(0,84,0);
+  }
+  
+  .footer-column input {
+    width: 70%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    display: inline;
+  }
+  
+  .footer-column button {
+    padding: 8px 15px;
+    background-color: rgba(var(--bs-success-rgb));
+    display: inline;
+    border: none;
+    color: #fff;
+    cursor: pointer;
+  }
+  
+  .footer-column button:hover {
+    background-color: rgb(0,84,0);
+  }
+  
+  .footer-bottom-row {
+    text-align: center;
+    padding-top: 10px;
+    color: #333;
+  }
+  
+  /* Responsiveness */
+  @media (max-width: 1024px) {
+    .footer-bottom {
+      grid-template-columns: 1fr 1fr; /* 2 equal columns on medium screens */
+      padding: 20px 40px; /* Reduced padding for medium screens */
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .footer-bottom {
+      grid-template-columns: 1fr; /* 1 column on small screens */
+      padding: 20px; /* Reduced padding for small screens */
+    }
+  
+    .footer-top {
+      flex-direction: column;
+      align-items: flex-start;
+      margin-bottom: 10px;
+    }
+  
+    .footer-socials {
+      margin-top: 10px;
+    }
+  
+    .footer-socials a {
+      margin-left: 10px;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .footer-brand-name {
+      font-size: 20px;
+    }
+  
+    .footer-column h4 {
+      font-size: 14px;
+    }
+  
+    .footer-column ul li a {
+      font-size: 14px;
+    }
+  
+    .footer-column input {
+      width: 100%; /* Full width on mobile */
+    }
+  
+    .footer-column button {
+      width: 100%; /* Full width button on mobile */
+      padding: 10px;
+    }
+  }
+  

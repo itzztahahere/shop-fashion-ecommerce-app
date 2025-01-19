@@ -1,0 +1,137 @@
+/* Register Container Styles */
+.register-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 40px;
+  background-color: #f8f9fa;
+}
+
+/* Form Box Styling */
+.register-form {
+  width: 100%;
+  max-width: 600px;
+  background-color: white;
+  padding: 30px;
+  border-radius: 8px;
+  /* Removed box shadow */
+}
+
+/* Heading Styling */
+.register-heading {
+  text-align: center;
+  font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+/* Form Field Styles */
+.form-field {
+  margin-bottom: 20px;
+}
+
+.form-field label {
+  display: block;
+  font-size: 1rem;
+  color: #333;
+  margin-bottom: 5px;
+}
+
+.form-field input,
+.form-field select,
+.form-field textarea {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 1rem;
+  color: #333;
+}
+
+.form-field textarea {
+  height: 120px;
+  resize: vertical;
+}
+
+.form-field input:focus,
+.form-field select:focus,
+.form-field textarea:focus {
+  outline: none;
+  /* Updated to the same green color used in login form */
+  border-color: rgba(var(--bs-success-rgb)); 
+}
+
+/* Hint Text for Security Question Answer */
+.hint-text {
+  font-size: 0.875rem;
+  color: #777;
+}
+
+/* Register Button Styling */
+.register-button {
+  background-color: rgba(var(--bs-success-rgb)); /* Updated to the same green color */
+  color: white;
+  border: none;
+  padding: 12px 20px;
+  font-size: 1rem;
+  width: 100%;
+  cursor: pointer;
+  text-transform: uppercase;
+}
+
+.register-button:hover {
+  background-color: rgb(0, 84, 0); /* Darker green on hover */
+}
+
+/* Login Link Section */
+.or-section {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.or-section p {
+  font-size: 1rem;
+  color: #333;
+}
+
+.login-link {
+  display: inline-block;
+  font-size: 1rem;
+  color: rgba(var(--bs-success-rgb)); /* Updated to the same green color */
+  text-decoration: none;
+}
+
+.login-link:hover {
+  text-decoration: underline;
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+  .register-form {
+    padding: 20px 30px;
+    width: 100%;
+    max-width: 320px;
+  }
+
+  .register-heading {
+    font-size: 1.8rem;
+  }
+
+  .form-field input,
+  .form-field select,
+  .form-field textarea {
+    font-size: 0.9rem;
+    padding: 8px;
+  }
+
+  .register-button {
+    padding: 10px 18px;
+    font-size: 0.9rem;
+  }
+
+  .or-section p {
+    font-size: 0.9rem;
+  }
+}

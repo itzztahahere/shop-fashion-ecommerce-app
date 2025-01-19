@@ -1,0 +1,83 @@
+/* Page Banner Section */
+.page-banner {
+  position: relative;
+  background-image: url('../public/images/pb.jpg');
+  background-size: cover;
+  background-position: center center;
+  padding: 80px 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 300px; /* Adjust height of the banner */
+}
+
+.page-banner::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.7); /* Black overlay with 70% opacity */
+  z-index: 1; /* Ensures the overlay is above the image but below the content */
+}
+
+.banner-content {
+  text-align: center;
+  color: white;
+  max-width: 80%;
+  margin: 0 auto;
+  z-index: 2; /* Ensures the content is above the overlay */
+}
+
+/* Page Title Styling */
+.page-title {
+  font-size: 3rem;
+  font-weight: bold;
+  margin-bottom: 20px;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7); /* Optional text shadow for better visibility */
+}
+
+/* Breadcrumbs Styling */
+.breadcrumbs ul {
+  list-style: none;
+  padding: 0;
+  display: inline-flex;
+  font-size: 1rem;
+  color: white;
+}
+
+.breadcrumbs li {
+  margin: 0 5px;
+}
+
+.breadcrumbs a {
+  text-decoration: none;
+  color: white;
+}
+
+.breadcrumbs a:hover {
+  text-decoration: underline;
+}
+
+/* Separator Styling */
+.separator {
+  margin: 0 5px;
+  color: #ccc;
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+  .page-banner {
+    padding: 50px 0; /* Adjust padding for mobile screens */
+    height: 200px; /* Reduce height for mobile screens */
+  }
+
+  .page-title {
+    font-size: 2rem; /* Smaller font size on mobile */
+  }
+
+  .breadcrumbs ul {
+    font-size: 0.875rem; /* Adjust font size of breadcrumbs */
+  }
+}

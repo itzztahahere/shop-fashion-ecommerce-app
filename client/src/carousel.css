@@ -1,0 +1,84 @@
+/* carousel.css */
+
+/* Container for the entire carousel */
+.carousel-container {
+    width: 100vw;
+    background-color: #fff;
+    max-height: 658px;
+    margin: 0;
+    padding: 0;
+  }
+  
+  /* Each carousel item (with background image) */
+  .carousel-item {
+    background-size: cover;
+    background-position: top center;
+    height: 658px; /* Adjust according to your design */
+    display: flex;
+    width: 100vw;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  /* The content inside the carousel item */
+  .carousel-content {
+    position: absolute;
+    left: 15%; /* Left aligned content */
+    top: 20%;
+    color: #333;
+    max-width: 50%; /* Ensure content doesn't overflow */
+    text-align: left;
+  }
+  
+  /* Heading inside the carousel */
+  .carousel-heading {
+    font-size: 2.5rem; /* Adjust based on design */
+    font-weight: bold;
+    margin-bottom: 20px;
+  }
+  
+  /* Text below the heading */
+  .carousel-text {
+    font-size: 1rem;
+    margin-bottom: 20px;
+    max-width: 100%;
+  }
+  
+  /* CTA button */
+  .cta-button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 1rem;
+    cursor: pointer;
+    text-transform: uppercase;
+  }
+  
+  .cta-button:hover {
+    background-color: #0056b3;
+  }
+  
+  /* For mobile responsiveness */
+  @media (max-width: 768px) {
+    .carousel-item{
+      height: 350px;
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center;
+      
+    }
+    .carousel-content {
+      left: 5%;
+      max-width: 80%; /* Adjust width on smaller screens */
+    }
+  
+    .carousel-heading {
+      font-size: 1.5rem; /* Smaller text on mobile */
+    }
+  
+    .carousel-text {
+      font-size: 0.875rem; /* Smaller text for mobile */
+    }
+  }
+  
