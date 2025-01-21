@@ -29,11 +29,11 @@ app.use(cors());
 //     port: 3306,                          // Default MySQL port
 // });
 const db = mysql.createConnection({
-  host: process.env.MYSQL_HOST,                  // Set to MYSQL_HOST environment variable
-  user: process.env.MYSQL_USER,                  // Set to MYSQL_USER environment variable
-  password: process.env.MYSQL_PASSWORD,          // Set to MYSQL_PASSWORD environment variable
+  host: process.env.MYSQLHOST,                  // Set to MYSQL_HOST environment variable
+  user: process.env.MYSQLUSER,                  // Set to MYSQL_USER environment variable
+  password: process.env.MYSQLPASSWORD,          // Set to MYSQL_PASSWORD environment variable
   database: process.env.MYSQL_DATABASE,          // Set to MYSQL_DATABASE environment variable
-  port: process.env.MYSQL_PORT                   // Set to MYSQL_PORT environment variable
+  port: process.env.MYSQLPORT                   // Set to MYSQL_PORT environment variable
 });
 db.connect((err) => {
     if (err) {
