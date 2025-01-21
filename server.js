@@ -15,18 +15,20 @@ app.use(bodyParser.json());
 app.use(cors());
 
 // Database connection
+// const db = mysql.createConnection({
+//     host: 'junction.proxy.rlwy.net',  // Extracted host from the URL
+//     user: 'root',                     // Username from the URL
+//     password: 'ZIdWRKAHOagfqNWPjwTwptqOGmUKAhbr',  // Password from the URL
+//     database: 'railway',              // Database name from the URL
+//     port: 20934, 
+// });
 const db = mysql.createConnection({
-    // host: 'localhost',
-    // user: 'root',
-    // password: '',
-    // database: 'proj',
-    host: 'junction.proxy.rlwy.net',  // Extracted host from the URL
-    user: 'root',                     // Username from the URL
-    password: 'ZIdWRKAHOagfqNWPjwTwptqOGmUKAhbr',  // Password from the URL
-    database: 'railway',              // Database name from the URL
-    port: 20934, 
+    host: 'sql12.freemysqlhosting.net',  // Use the provided host
+    user: 'sql12758603',                 // Use the provided username
+    password: 'SHtZ9SmfRx',              // Use the provided password
+    database: 'sql12758603',             // Use the provided database name
+    port: 3306,                          // Default MySQL port
 });
-
 db.connect((err) => {
     if (err) {
         console.error('Error connecting to the database:', err);
@@ -202,54 +204,6 @@ app.get('/get-products-count', (req, res) => {
     });
 });
 
-// Update Products with the help of p_Id--------->
-// app.put('/update-product/:p_id', (req, res) => {
-//     const { p_name, p_description, p_price, p_category, p_image } = req.body;
-//     const { p_id } = req.params;
-
-//     // Validation
-//     if (!p_id) {
-//         return res.status(400).send({ success: false, message: 'Product ID is required' });
-//     }
-
-//     // Update query
-//     const query = `
-//         UPDATE products
-//         SET 
-//             p_name = ?, 
-//             p_description = ?, 
-//             p_price = ?, 
-//             p_category = ?, 
-//             p_image = ?
-//         WHERE 
-//             p_id = ?;
-//     `;
-
-//     const values = [p_name, p_description, p_price, p_category, p_image, p_id];
-
-//     db.execute(query, values, (err, result) => {
-//         if (err) {
-//             console.error('Error updating product:', err);
-//             return res.status(500).send({
-//                 success: false,
-//                 message: 'Error updating product',
-//                 error: err.message,
-//             });
-//         }
-
-//         if (result.affectedRows === 0) {
-//             return res.status(404).send({
-//                 success: false,
-//                 message: 'Product not found',
-//             });
-//         }
-
-//         res.status(200).send({
-//             success: true,
-//             message: 'Product updated successfully',
-//         });
-//     });
-// });
 app.put('/update-product/:p_id', (req, res) => {
     const { p_name, p_description, p_price, p_category } = req.body; // removed p_image from req.body
     const { p_id } = req.params;
@@ -427,64 +381,7 @@ app.post('/user-register', (req, res) => {
     });
 });
 
-// // User login endpoint
-// app.post('/user-login', (req, res) => {
-//     const { u_email, u_password } = req.body;
 
-//     try {
-//         // Input validation
-//         if (!u_email) {
-//             return res.status(400).send({ message: 'Email is Required' });
-//         }
-//         if (!u_password) {
-//             return res.status(400).send({ message: 'Password is Required' });
-//         }
-
-//         // Check if user exists
-//         db.query('SELECT * FROM users WHERE u_email = ?', [u_email], (err, rows) => {
-//             if (err) {
-//                 console.error(err);
-//                 return res.status(500).send({ message: 'Error during login', error: err });
-//             }
-
-//             if (rows.length === 0) {
-//                 return res.status(404).send({
-//                     success: false,
-//                     message: 'User not found, please register first',
-//                 });
-//             }
-
-//             const user = rows[0];
-
-//             // Compare the plain password
-//             if (u_password !== user.u_password) {
-//                 return res.status(401).send({
-//                     success: false,
-//                     message: 'Invalid password',
-//                 });
-//             }
-
-//             // Respond with success
-//             res.status(200).send({
-//                 success: true,
-//                 message: 'Login successful',
-//                 user: {
-//                     u_id: user.u_id,
-//                     u_name: user.u_name,
-//                     u_email: user.u_email,
-//                     u_role: user.u_role
-//                 },
-//             });
-//         });
-//     } catch (error) {
-//         console.error(error);
-//         res.status(500).send({
-//             success: false,
-//             message: 'Error during login',
-//             error,
-//         });
-//     }
-// });
 app.post('/user-login', (req, res) => {
     const { u_email, u_password } = req.body;
 
@@ -861,12 +758,11 @@ app.post('/create-contact', (req, res) => {
 // app.listen(port, () => {
 //     console.log(`Server is running on port ${port}`);
 // });
-
+// Set up server listener
 const PORT = process.env.PORT || 20934;
 app.listen(PORT, () => {
     console.log(`Server running on port ${PORT}`);
 });
-
 
 //Rough for getting faqs
 app.get('/get-faqs', (req, res) => {
