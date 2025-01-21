@@ -5,6 +5,7 @@ import '../navbar.css';
 import { useUser } from '../context/userAuth'; // Import User Context
 import { useCart } from '../context/Cart';
 import useCategory from "../hooks/useCategory";
+import apiUrl from '../utils/config'
 
 const Navbar = () => {
   const navigate = useNavigate();
