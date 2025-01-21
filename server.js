@@ -348,7 +348,7 @@ app.post('/user-register', (req, res) => {
     db.query('SELECT * FROM users WHERE u_email = ?', [u_email], (err, rows) => {
         if (err) {
             console.log(err);
-            return res.status(500).send({ success: false, message: 'Database error', error: err });
+            return res.status(500).send({ success: false, message: 'Database error here', error: err });
         }
         if (rows.length > 0) {
             return res.status(200).send({
@@ -365,7 +365,7 @@ app.post('/user-register', (req, res) => {
             (err, result) => {
                 if (err) {
                     console.log(err);
-                    return res.status(500).send({ success: false, message: 'Database error', error: err });
+                    return res.status(500).send({ success: false, message: 'An error occured while registering', error: err });
                 }
 
                 // Respond with success
