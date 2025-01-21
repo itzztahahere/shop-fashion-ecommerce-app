@@ -361,7 +361,7 @@ app.post('/user-register', (req, res) => {
         db.query(
             `INSERT INTO users (u_name, u_email, u_password, u_address,u_ques, u_answer, u_role) 
              VALUES (?, ?, ?, ?, ?, ?,?)`,
-            [u_name, u_email, u_password, u_address,1, u_answer, 'user'],
+            [u_name, u_email, u_password, u_address,1, u_answer, 1],
             (err, result) => {
                 if (err) {
                     console.log(err);
