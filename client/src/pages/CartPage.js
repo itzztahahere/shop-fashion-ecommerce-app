@@ -1,7 +1,7 @@
 import React from 'react'
 import { MdClose } from 'react-icons/md';
 import { useCart } from '../context/Cart';
-import apiUrl from './config';
+import apiUrl from '../utils/config';
 const CartPage = () => {
     const { cart, setCart } = useCart();
 
