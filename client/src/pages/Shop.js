@@ -7,6 +7,7 @@ import useCategory from "../hooks/useCategory";
 import { useCart } from '../context/Cart';
 import '../shop.css';
 import { FaChevronLeft, FaChevronRight } from 'react-icons/fa'; // Import React Icons
+import apiUrl from '../utils/config'
 
 const Shop = () => {
     const [currentPage, setCurrentPage] = useState(1);
@@ -22,7 +23,7 @@ const Shop = () => {
     const getAllProducts = async () => {
         try {
             const { data } = await axios.get(
-                "${apiUrl}/get-products"
+                `${apiUrl}/get-products`
             );
             setProducts(data?.data);
         } catch (error) {

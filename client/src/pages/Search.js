@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import { useCart } from '../context/Cart';
+import apiUrl from '../utils/config'
 
 
 const Search = () => {
