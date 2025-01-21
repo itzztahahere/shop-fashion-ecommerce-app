@@ -4,6 +4,7 @@ import Pb from "../components/PageBanner";
 import axios from "axios";
 import { useCart } from "../context/Cart";
 import "../shop.css";
+import apiUrl from '../utils/config'
 
 const NewArrivals = () => {
   const [products, setProducts] = useState([]);
@@ -20,7 +21,7 @@ const NewArrivals = () => {
   const getAllProducts = async () => {
     try {
       const { data } = await axios.get(
-        "${apiUrl}/new-arrivals"
+        `${apiUrl}/new-arrivals`
       );
       setProducts(data?.data);
     } catch (error) {

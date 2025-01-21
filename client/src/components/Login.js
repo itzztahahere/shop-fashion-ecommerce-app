@@ -3,6 +3,7 @@ import '../Login.css'; // Your custom styles
 import { FaEye, FaEyeSlash } from 'react-icons/fa';
 import { useUser } from '../context/userAuth';
 import { useNavigate } from 'react-router-dom';
+import apiUrl from '../utils/config'
 
 const Login = () => {
   const { login } = useUser();
@@ -43,7 +44,7 @@ const Login = () => {
 
     // If no errors, simulate form submission (API integration)
     try {
-      const response = await fetch('${apiUrl}/user-login', {
+      const response = await fetch(`${apiUrl}/user-login`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ u_email: email, u_password: password }),

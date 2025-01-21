@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import '../Register.css'; // Ensure you import your custom styles
+import apiUrl from '../utils/config'
 
 const Register = () => {
   const [name, setName] = useState('');
@@ -21,7 +22,7 @@ const Register = () => {
     }
 
     try {
-      const response = await fetch('${apiUrl}/user-register', {
+      const response = await fetch(`${apiUrl}/user-register`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

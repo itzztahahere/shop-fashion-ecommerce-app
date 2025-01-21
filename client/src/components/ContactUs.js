@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import '../ContactUs.css'; // For styling
+import apiUrl from '../utils/config'
 
 const ContactUs = () => {
   const [name, setName] = useState('');

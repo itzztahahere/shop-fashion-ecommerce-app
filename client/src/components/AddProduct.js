@@ -4,7 +4,7 @@
 import React, { useState } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import '../AddProduct.css'; // Ensure you import your custom styles
-
+import apiUrl from '../utils/config'
 const AddProduct = () => {
   const [name, setName] = useState('');
   const [description, setDescription] = useState('');

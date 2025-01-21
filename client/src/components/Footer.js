@@ -3,6 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import { FaFacebook, FaInstagram, FaWhatsapp } from 'react-icons/fa';
 import '../footer.css';
 import axios from 'axios';
+import apiUrl from '../utils/config'
 
 const Footer = () => {
   const navigate = useNavigate();
@@ -23,7 +24,7 @@ const Footer = () => {
 
     setIsLoading(true);
     try {
-      const response = await axios.post('${apiUrl}/add-subscriber', { email });
+      const response = await axios.post(`${apiUrl}/add-subscriber`, { email });
       if (response.data.success) {
         setMessage('Successfully subscribed!');
         setTimeout(() => {

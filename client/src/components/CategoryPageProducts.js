@@ -4,6 +4,7 @@ import Pb from "../components/PageBanner";
 import axios from "axios";
 import { useCart } from "../context/Cart";
 import "../shop.css";
+import apiUrl from '../utils/config'
 
 const CategoryPageProducts = () => {
     const [products, setProducts] = useState([]);
@@ -21,7 +22,7 @@ const CategoryPageProducts = () => {
 
     const getProductsbyCategory = async () => {
         try {
-            const { data } = await axios.get(`/get-products-by-category/${categoryName}`);
+            const { data } = await axios.get(`${apiUrl}/get-products-by-category/${categoryName}`);
             if (data.success) {
                 setProducts(data.products);
                 setCategory(data.category);

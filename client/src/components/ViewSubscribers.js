@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import { MdDelete } from 'react-icons/md';  // Only showing delete icon
+import apiUrl from '../utils/config'
 
 const ViewSubscribers = () => {
     const [subscribers, setSubscribers] = useState([]);
@@ -12,7 +13,7 @@ const ViewSubscribers = () => {
     useEffect(() => {
         const fetchSubscribers = async () => {
             try {
-                const response = await axios.get('/get-subscribers');
+                const response = await axios.get(`${apiUrl}/get-subscribers`);
                 if (response.data.success) {
                     setSubscribers(response.data.data);
                 } else {
@@ -46,7 +47,7 @@ const ViewSubscribers = () => {
     // Handle delete subscriber
     const handleDelete = async (email) => {
         try {
-            const response = await axios.delete(`/delete-subscriber/${email}`);
+            const response = await axios.delete(`${apiUrl}/delete-subscriber/${email}`);
             if (response.data.success) {
                 // Remove the deleted subscriber from the list
                 setSubscribers(subscribers.filter(subscriber => subscriber.email !== email));

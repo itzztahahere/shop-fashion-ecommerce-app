@@ -1,6 +1,7 @@
 // DashboardGraphs.js
 import React, { useState, useEffect } from "react";
 import { BarChart, Bar, PieChart, Pie, Cell, XAxis, YAxis, Tooltip, Legend } from 'recharts';
+import apiUrl from '../utils/config'
 
 const DashboardGraphs = () => {
     const [error, setError] = useState(null);

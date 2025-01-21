@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import '../my.css';
 import { useCart } from '../context/Cart';
+import apiUrl from '../utils/config'
 
 const EditorsPick = () => {
   const [products, setProducts] = useState([]);
@@ -12,7 +13,7 @@ const EditorsPick = () => {
   // Fetch the featured products from the API
   const getFeaturedProducts = async () => {
     try {
-      const { data } = await axios.get("${apiUrl}/get-products"); // Replace with your API endpoint
+      const { data } = await axios.get(`${apiUrl}/get-products`); // Replace with your API endpoint
       setProducts(data?.data.slice(0, 4)); // Get only the first 8 products
     } catch (error) {
       console.error(error);

@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import { MdEdit, MdDelete } from 'react-icons/md';  // Importing the pencil (edit) and cross (delete) icons
+import apiUrl from '../utils/config'
 
 const ViewProducts = () => {
     const [products, setProducts] = useState([]);
@@ -15,7 +16,7 @@ const ViewProducts = () => {
     useEffect(() => {
         const fetchProducts = async () => {
             try {
-                const response = await axios.get('/get-products');
+                const response = await axios.get(`${apiUrl}/get-products`);
                 if (response.data.success) {
                     setProducts(response.data.data);
                 } else {
@@ -71,7 +72,7 @@ const ViewProducts = () => {
     const handleUpdateProduct = async (e) => {
         e.preventDefault();
         try {
-            const response = await axios.put(`/update-product/${productToUpdate.p_id}`, updateForm);
+            const response = await axios.put(`${apiUrl}/update-product/${productToUpdate.p_id}`, updateForm);
             if (response.data.success) {
                 setProducts(products.map(product => product.p_id === productToUpdate.p_id ? { ...productToUpdate, ...updateForm } : product)); // Update product in state
                 alert('Product updated successfully');
@@ -87,7 +88,7 @@ const ViewProducts = () => {
     // Handle delete product
     const handleDelete = async (productId) => {
         try {
-            const response = await axios.delete(`/delete-product/${productId}`);
+            const response = await axios.delete(`${apiUrl}/delete-product/${productId}`);
             if (response.data.success) {
                 // Remove the deleted product from the list
                 setProducts(products.filter(product => product.p_id !== productId));

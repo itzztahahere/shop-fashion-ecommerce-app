@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import apiUrl from '../utils/config'
 import '../ForgotPassword.css'; // Ensure you import your custom styles
 
 const ForgotPassword = () => {
@@ -19,7 +20,7 @@ const ForgotPassword = () => {
 
     setLoading(true); // Start the loading state
     try {
-      const response = await fetch('/forgot-password', {
+      const response = await fetch(`${apiUrl}/forgot-password`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
