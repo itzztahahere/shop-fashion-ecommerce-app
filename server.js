@@ -4,7 +4,6 @@ const bodyParser = require('body-parser');
 const cors = require('cors');
 const multer = require('multer');
 
-const apiUrl="https://shop-fashion-ecommerce-app-production.up.railway.app/";
 const fs = require("fs");
 
 const path = require('path');
