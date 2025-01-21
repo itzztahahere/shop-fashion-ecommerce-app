@@ -21,12 +21,19 @@ app.use(cors());
 //     database: 'railway',              // Database name from the URL
 //     port: 20934, 
 // });
+// const db = mysql.createConnection({
+//     host: 'sql12.freemysqlhosting.net',  // Use the provided host
+//     user: 'sql12758603',                 // Use the provided username
+//     password: 'SHtZ9SmfRx',              // Use the provided password
+//     database: 'sql12758603',             // Use the provided database name
+//     port: 3306,                          // Default MySQL port
+// });
 const db = mysql.createConnection({
-    host: 'sql12.freemysqlhosting.net',  // Use the provided host
-    user: 'sql12758603',                 // Use the provided username
-    password: 'SHtZ9SmfRx',              // Use the provided password
-    database: 'sql12758603',             // Use the provided database name
-    port: 3306,                          // Default MySQL port
+  host: process.env.MYSQL_HOST,                  // Set to MYSQL_HOST environment variable
+  user: process.env.MYSQL_USER,                  // Set to MYSQL_USER environment variable
+  password: process.env.MYSQL_PASSWORD,          // Set to MYSQL_PASSWORD environment variable
+  database: process.env.MYSQL_DATABASE,          // Set to MYSQL_DATABASE environment variable
+  port: process.env.MYSQL_PORT                   // Set to MYSQL_PORT environment variable
 });
 db.connect((err) => {
     if (err) {
